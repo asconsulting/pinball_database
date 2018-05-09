@@ -1,0 +1,15 @@
+<?php $this->block('content'); ?>
+  <div class="games_wrapper">
+	  <?php if ($this->headline): ?>
+		<<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+	  <?php endif; ?>
+	  
+	  <div class="games_list">
+	  <?php if (empty($this->games)): ?>
+		<p class="empty"><?= $this->empty ?></p>
+	  <?php else: ?>
+		<?= implode('', $this->games) ?>
+	  <?php endif; ?>
+	  </div>
+  </div>
+<?php $this->endblock(); ?>
