@@ -7,7 +7,6 @@
  *
  * @package    Walrus Pinball Database
  * @link       https://walruspinball.com
- * @license    All Rights Reserved
  */
 
 
