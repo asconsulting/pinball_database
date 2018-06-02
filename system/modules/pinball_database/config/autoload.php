@@ -22,7 +22,9 @@ ClassLoader::addClasses(array
 	// Module Classes
 	'WalrusPinball\Modules\ModuleGamesList' 	=> 'system/modules/pinball_database/library/WalrusPinball/Modules/ModuleGamesList.php',
 	'WalrusPinball\Modules\ModuleGamesReader' 	=> 'system/modules/pinball_database/library/WalrusPinball/Modules/ModuleGamesReader.php',
-	
+		
+	// Models
+	'WalrusPinball\Model\Game' 					=> 'system/modules/pinball_database/library/WalrusPinball/Model/Game.php'
 ));
 
 
