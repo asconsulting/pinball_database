@@ -35,6 +35,10 @@ $GLOBALS['BE_MOD'] = array_merge(
 $GLOBALS['FE_MOD']['wp_archive']['games_list'] 			= 'ModuleGamesList';
 $GLOBALS['FE_MOD']['wp_archive']['games_reader'] 		= 'ModuleGamesReader';
 
+/**
+ * Models
+ */
+$GLOBALS['TL_MODELS']['tl_wp_archive_game'] 				= 'WalrusPinball\Model\Game';
 
 /**
  * Hooks
