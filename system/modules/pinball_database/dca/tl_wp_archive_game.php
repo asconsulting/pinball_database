@@ -136,7 +136,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     // Palettes
     'palettes' => array
     (
-		'__selector__'				  => array('type'),
+		'__selector__'				  => array('type', 'customized'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
 		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,system_family,system,system_version;{custom_legend},customized;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
 		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
@@ -334,7 +334,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'inputType'               => 'select',
 			'filter'				  => true,
 			'options'				  => array('complete'=>'Complete Custom Game', 'retheme'=>'Custom Re-Themed Game', 'art_sound'=>'Custom Art and/or Sound'),
-			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'clr w50'),
+			'eval'                    => array('submitOnChange'=>true, 'includeBlankOption'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'custom_details' => array
