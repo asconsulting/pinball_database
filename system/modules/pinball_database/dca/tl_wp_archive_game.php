@@ -138,11 +138,18 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     (
 		'__selector__'				  => array('type'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
-		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,system_family,system,system_version;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
-		'arcade' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{publish_legend},published;',
-		'redemption' 				  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{publish_legend},published;',
-		'other' 					  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{publish_legend},published;'
+		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,system_family,system,system_version;{custom_legend},customized;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
+		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
+		'arcade' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
+		'redemption' 				  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
+		'other' 					  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;'
     ),
+	
+	// Subpalettes
+	'subpalettes' => array
+	(
+		'customized'                  => 'custom_details',
+	),
  
     // Fields
     'fields' => array
@@ -320,6 +327,24 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'eval'                    => array(),
 			'sql'                     => "blob NULL"
 		),
+		
+		'customized' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['customized'],
+			'inputType'               => 'select',
+			'filter'				  => true,
+			'options'				  => array('complete'=>'Complete Custom Game', 'retheme'=>'Custom Re-Themed Game', 'art_sound'=>'Custom Art and/or Sound'),
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'clr w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'custom_details' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['custom_details'],
+			'inputType'               => 'textarea',
+			'eval'                    => array('rows'=>4, 'cols'=>40, 'tl_class'=>'clr long'),
+			'sql'                     => "mediumtext NULL"
+		),
+		
 		'published' => array
 		(
 			'exclude'                 => true,
