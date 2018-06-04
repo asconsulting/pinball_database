@@ -203,7 +203,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['type'],
 			'inputType'               => 'select',
 			'filter'				  => true,
-			'options'				  => array('pinball'=>'Pinball', 'arcade'=>'Arcade', 'redeption'=>'Redeption', 'other'=>'Other'),
+			'options'				  => array('pinball'=>'Pinball', 'pitch'=>'Pitch and Bat', 'arcade'=>'Arcade', 'redeption'=>'Redeption', 'other'=>'Other'),
 			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
