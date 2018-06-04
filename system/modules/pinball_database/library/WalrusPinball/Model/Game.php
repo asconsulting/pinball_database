@@ -25,6 +25,17 @@ class Game extends \Model
 	public static function findAllPublished(array $arrOptions=array())
 	{
 		$t = static::$strTable;
+		
+		$arrOptions = array_merge
+		(
+			array
+			(
+				'order'  => '$t.title'
+			),
+
+			$arrOptions
+		);
+
 		return static::findBy(array("$t.published=?"), 1, $arrOptions);
 	}
 
