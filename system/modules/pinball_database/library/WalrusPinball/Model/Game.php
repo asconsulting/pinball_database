@@ -30,7 +30,7 @@ class Game extends \Model
 		(
 			array
 			(
-				'order'  => '$t.title'
+				'order'  => "$t.title"
 			),
 
 			$arrOptions
