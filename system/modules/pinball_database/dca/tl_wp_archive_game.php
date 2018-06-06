@@ -340,7 +340,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => $GLOBALS['TL_LANG']['tl_wp_archive_game']['is_custom'],
 			'inputType'               => 'checkbox',
 			'filter'				  => true,
-			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 m12'),
+			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr w50 m12'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 		'customized' => array
@@ -349,7 +349,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'inputType'               => 'select',
 			'filter'				  => true,
 			'options'				  => array('complete'=>'Complete Custom Game', 'retheme'=>'Custom Re-Themed Game', 'art_sound'=>'Custom Art and/or Sound'),
-			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'clr w50'),
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'custom_details' => array
@@ -359,7 +359,6 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'eval'                    => array('rows'=>4, 'cols'=>40, 'tl_class'=>'clr long'),
 			'sql'                     => "mediumtext NULL"
 		),
-		
 		'published' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['published'],
