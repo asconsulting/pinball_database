@@ -138,7 +138,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     (
 		'__selector__'				  => array('type', 'is_custom'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
-		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,limited_edition,system_family,system,system_version;{custom_legend},customized;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
+		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,limited_edition,machine_type,system_family,system,system_version;{custom_legend},is_custom;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
 		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
 		'arcade' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
 		'redemption' 				  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
@@ -275,7 +275,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['production'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>6, 'minlength'=>1, 'tl_class'=>'w50'),
+			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>6, 'minlength'=>1, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(6) NULL"
 		),
 		'machine_type' => array
@@ -292,7 +292,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['system_family'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('tl_class'=>'clr w50'),
+			'eval'                    => array('tl_class'=>'w50'),
 			'filter'                  => true,
 			'sql'                     => "varchar(255) NULL"
 		),
@@ -301,7 +301,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['system'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('tl_class'=>'w50'),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'filter'                  => true,
 			'sql'                     => "varchar(255) NULL"
 		),
@@ -310,7 +310,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['system_version'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('tl_class'=>'clr w50'),
+			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NULL"
 		),
 		'image' => array
@@ -331,6 +331,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 		(
 			'label'                   => $GLOBALS['TL_LANG']['tl_wp_archive_game']['limited_edition'],
 			'inputType'               => 'checkbox',
+			'filter'				  => true,
 			'eval'                    => array('tl_class'=>'w50 m12'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
@@ -338,6 +339,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 		(
 			'label'                   => $GLOBALS['TL_LANG']['tl_wp_archive_game']['is_custom'],
 			'inputType'               => 'checkbox',
+			'filter'				  => true,
 			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 m12'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
