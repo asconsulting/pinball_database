@@ -138,7 +138,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     (
 		'__selector__'				  => array('type', 'customized'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
-		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,system_family,system,system_version;{custom_legend},customized;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
+		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,limited_edition,system_family,system,system_version;{custom_legend},customized;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
 		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
 		'arcade' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
 		'redemption' 				  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
