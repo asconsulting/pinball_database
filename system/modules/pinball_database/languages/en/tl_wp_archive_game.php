@@ -17,6 +17,7 @@ $GLOBALS['TL_LANG']['tl_wp_archive_game']['game_legend'] 		= 'Game Configuration
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['detail_legend'] 		= 'Game Details';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['custom_legend'] 		= 'Custom Details';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['pinside_legend'] 	= 'Pinside Data';
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['media_legend'] 		= 'Media';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['publish_legend'] 	= 'Publish';
 
 /**
@@ -41,7 +42,8 @@ $GLOBALS['TL_LANG']['tl_wp_archive_game']['system_family'] 		= array('System Fam
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['system_version'] 	= array('System Version', 'Version of the System (MPU).');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['machine_type'] 		= array('Machine', 'Technology that powers this game.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['limited_edition'] 	= array('Limited Edition', 'This is a limited edition game');
-$GLOBALS['TL_LANG']['tl_wp_archive_game']['customized'] 		= array('Customized', 'Is this a custom game or retheme.');
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['is_custom'] 			= array('Is Custom', 'Is this a custom game or retheme.');
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['customized'] 		= array('Customized', 'What type of custom game.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['custom_details'] 	= array('Custom Details', 'Details about custom game.');
 
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['published'] 			= array('Published', 'Show this record on the front end.');

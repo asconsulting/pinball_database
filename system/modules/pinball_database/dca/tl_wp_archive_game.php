@@ -136,7 +136,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     // Palettes
     'palettes' => array
     (
-		'__selector__'				  => array('type', 'customized'),
+		'__selector__'				  => array('type', 'is_custom'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
 		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,machine_type,limited_edition,system_family,system,system_version;{custom_legend},customized;{media_legend},pinside_thumb,image,thumbnail;{publish_legend},published;',
 		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
@@ -148,7 +148,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 	// Subpalettes
 	'subpalettes' => array
 	(
-		'customized'                  => 'custom_details',
+		'is_custom'                  => 'customized,custom_details',
 	),
  
     // Fields
@@ -334,13 +334,20 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'eval'                    => array('tl_class'=>'w50 m12'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
+		'is_custom' => array
+		(
+			'label'                   => $GLOBALS['TL_LANG']['tl_wp_archive_game']['is_custom'],
+			'inputType'               => 'checkbox',
+			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 m12'),
+			'sql'                     => "char(1) NOT NULL default ''"
+		),
 		'customized' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['customized'],
 			'inputType'               => 'select',
 			'filter'				  => true,
 			'options'				  => array('complete'=>'Complete Custom Game', 'retheme'=>'Custom Re-Themed Game', 'art_sound'=>'Custom Art and/or Sound'),
-			'eval'                    => array('submitOnChange'=>true, 'includeBlankOption'=>true, 'tl_class'=>'clr w50'),
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'custom_details' => array
@@ -353,7 +360,6 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 		
 		'published' => array
 		(
-			'exclude'                 => true,
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['published'],
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true),
