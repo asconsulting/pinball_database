@@ -39,6 +39,25 @@ class Game extends \Model
 		return static::findBy(array("$t.published=?"), 1, $arrOptions);
 	}
 
+	public static function findPublishedByPartialTitle($varValue, $strType='pinball', array $arrOptions=array())
+	{
+		$t = static::$strTable;
+		
+		$arrOptions = array_merge
+		(
+			array
+			(
+				'order'  => "$t.title"
+				'column' => array("$t.published=?", "$t.type=?", "$t.title LIKE '%" .$varValue ."%'"),
+				'value' => array(1, $strType)
+			),
+
+			$arrOptions
+		);
+
+		return static::findAll($arrOptions);
+	}	
+	
 	public static function findByPinsideSlug(array $arrOptions=array())
 	{
 		// Try to load from the registry
