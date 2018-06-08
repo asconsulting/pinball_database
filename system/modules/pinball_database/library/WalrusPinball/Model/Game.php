@@ -50,18 +50,18 @@ class Game extends \Model
 		);
 		
 		if ($strTitle) {
-			$arrBuild['column'][] 	= "$t.title LIKE ?",
-			$arrBuild['value'][]	= $strTitle
+			$arrBuild['column'][] 	= "$t.title LIKE ?";
+			$arrBuild['value'][]	= $strTitle;
 		}
 		
 		if ($strManufacturer) {
-			$arrBuild['column'][] 	= "$t.manufacturer LIKE ?",
-			$arrBuild['value'][]	= $strManufacturer
+			$arrBuild['column'][] 	= "$t.manufacturer LIKE ?";
+			$arrBuild['value'][]	= $strManufacturer;
 		}
 		
 		if ($strYear) {
-			$arrBuild['column'][] 	= "$t.release_year LIKE ?",
-			$arrBuild['value'][]	= $strYear
+			$arrBuild['column'][] 	= "$t.release_year LIKE ?";
+			$arrBuild['value'][]	= $strYear;
 		}
 		
 		$arrOptions = array_merge
