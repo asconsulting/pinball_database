@@ -92,7 +92,7 @@ class Game extends \Model
 		return static::findAll($arrOptions);
 	}	
 	
-	public static function findByPinsideSlug(array $arrOptions=array())
+	public static function findByPinsideSlug($varValue, array $arrOptions=array())
 	{
 		// Try to load from the registry
 		if (empty($arrOptions))
@@ -121,7 +121,7 @@ class Game extends \Model
 		return static::find($arrOptions);
 	}
 	
-	public static function findByIpdbNumber(array $arrOptions=array())
+	public static function findByIpdbNumber($varValue, array $arrOptions=array())
 	{
 		// Try to load from the registry
 		if (empty($arrOptions))
