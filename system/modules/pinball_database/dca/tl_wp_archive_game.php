@@ -363,7 +363,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['game_customized'],
 			'inputType'               => 'select',
-			'foreignKey'              => 'tl_wp_archive_game.id',
+			'foreignKey'              => 'tl_wp_archive_game.title',
 			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
 			'relation'                => array('type'=>'hasOne', 'load'=>'lazy'),
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"

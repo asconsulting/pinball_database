@@ -39,6 +39,40 @@ class Game extends \Model
 		return static::findBy(array("$t.published=?"), 1, $arrOptions);
 	}
 
+	public static function findPublishedByTitleManufacturerYear($strTitle=null, $strManufacturer=null, $strYear=null, array $arrOptions=array())
+	{
+		$t = static::$strTable;
+		
+		$arrBuild = array(
+			'order' 	=> "$t.title",
+			'column'	=> array("$t.published=?"),
+			'value'		=> array(1)
+		);
+		
+		if ($strTitle) {
+			$arrBuild['column'][] 	= "$t.title LIKE ?",
+			$arrBuild['value'][]	= $strTitle
+		}
+		
+		if ($strManufacturer) {
+			$arrBuild['column'][] 	= "$t.manufacturer LIKE ?",
+			$arrBuild['value'][]	= $strManufacturer
+		}
+		
+		if ($strYear) {
+			$arrBuild['column'][] 	= "$t.release_year LIKE ?",
+			$arrBuild['value'][]	= $strYear
+		}
+		
+		$arrOptions = array_merge
+		(
+			$arrBuild,
+			$arrOptions
+		);
+
+		return static::findAll($arrOptions);
+	}
+	
 	public static function findPublishedByPartialTitle($varValue, $strType='pinball', array $arrOptions=array())
 	{
 		$t = static::$strTable;
