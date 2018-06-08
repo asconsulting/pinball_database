@@ -148,7 +148,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 	// Subpalettes
 	'subpalettes' => array
 	(
-		'is_custom'                  => 'customized,custom_details',
+		'is_custom'                  => 'customized,custom_details,game_customized',
 	),
  
     // Fields
@@ -358,6 +358,15 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'inputType'               => 'textarea',
 			'eval'                    => array('rows'=>4, 'cols'=>40, 'tl_class'=>'clr long'),
 			'sql'                     => "mediumtext NULL"
+		),
+		'game_customized' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['game_customized'],
+			'inputType'               => 'select',
+			'foreignKey'              => 'tl_wp_archive_game.id',
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
+			'relation'                => array('type'=>'hasOne', 'load'=>'lazy'),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
 		),
 		'published' => array
 		(

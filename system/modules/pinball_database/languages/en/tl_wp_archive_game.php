@@ -45,7 +45,7 @@ $GLOBALS['TL_LANG']['tl_wp_archive_game']['limited_edition'] 	= array('Limited E
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['is_custom'] 			= array('Is Custom', 'Is this a custom game or retheme.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['customized'] 		= array('Customized', 'What type of custom game.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['custom_details'] 	= array('Custom Details', 'Details about custom game.');
-
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['game_customized'] 	= array('Game Customized', 'Game that was customized.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['published'] 			= array('Published', 'Show this record on the front end.');
  
  /**
