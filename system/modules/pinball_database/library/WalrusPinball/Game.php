@@ -34,6 +34,8 @@ class Game extends \Frontend
 		
 		$strReturn = false;
 		
+		return 'game ' .$arrTag[1];
+		
 		switch($arrTag[0]) {
 			case 'game':
 				
