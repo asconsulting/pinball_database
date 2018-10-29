@@ -34,12 +34,10 @@ class Game extends \Frontend
 		
 		$strReturn = false;
 		
-		return 'game ' .$arrTag[1];
-		
 		switch($arrTag[0]) {
 			case 'game':
 				
-				$objGame = GameModel::findByIdOrAlias($arrTag[1]);
+				$objGame = GameModel::findByPk($arrTag[1]);
 				if (!$objGame) {
 					return false;
 				}
@@ -62,7 +60,7 @@ class Game extends \Frontend
 			
 			case 'game_data':
 				
-				$objGame = GameModel::findByIdOrAlias($arrTag[1]);
+				$objGame = GameModel::findByPk($arrTag[1]);
 				if (!$objGame) {
 					return false;
 				}
