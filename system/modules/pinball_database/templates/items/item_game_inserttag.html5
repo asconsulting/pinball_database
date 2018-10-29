@@ -11,6 +11,6 @@
 	<?php if ($this->pin_vids): ?><a class="pin_vids" href="<?php echo $this->pin_vids; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>Pinball Videos">Pinball Videos</a><?php endif; ?>
 	<?php if ($this->tutorial_60s): ?><a class="tutorial_60s" href="<?php echo $this->tutorial_60s; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>60 Second Tutorial">60 Second Tutorial</a><?php endif; ?>
 	<?php if ($this->em_guide): ?><a class="em_guide" href="<?php echo $this->em_guide; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>EM Guide">EM Guide</a><?php endif; ?>
-	<?php if ($this->pinball_spinner): ?><a class="pinball_spinner" href="<?php echo $this->pinball_spinner; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>Pinball Spinner">Pinball Spinner Tutorial</a><?php endif; ?>
+	<?php if ($this->pinball_spinner): ?><a class="pinball_spinner" href="<?php echo $this->pinball_spinner; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>Pinball Spinner">Pinball Spinner</a><?php endif; ?>
 	</div>
 </div>
