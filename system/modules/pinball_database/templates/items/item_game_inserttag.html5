@@ -1,0 +1,13 @@
+
+<div class="game_wrapper block<?= $this->class ?>">
+	<a class="reader_link" name="id-<?php echo $this->id; ?>"<?php if ($this->link): ?> href="<?php echo $this->link; ?>"<?php endif; ?>>
+	<?php if ($this->title): ?><span class="title"><?php echo $this->title; ?></span><?php endif; ?>
+	<?php if ($this->subtitle): ?><span class="subtitle"><?php echo $this->subtitle; ?></span><?php endif; ?>
+	<?php if ($this->machine_count > 1): ?><span class="machine_count">(Count: <?php echo $this->machine_count; ?>)</span><?php endif; ?>
+	</a>
+	<div class="outside_links">
+	<?php if ($this->ipdb_number): ?><a class="ipdb" href="http://ipdb.org/machine.cgi?id=<?php echo $this->ipdb_number; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on IPDB">IPDB</a><?php endif; ?>
+	<?php if ($this->pinside_slug): ?><a class="pinside" href="https://pinside.com/pinball/archive/<?php echo $this->pinside_slug; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on Pinside">Pinside</a><?php endif; ?>
+	<?php if ($this->klov_number): ?><a class="klov" href="http://www.arcade-museum.com/game_detail.php?game_id=<?php echo $this->klov_number; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on Museum of the Game">KLOV</a><?php endif; ?>
+	</div>
+</div>

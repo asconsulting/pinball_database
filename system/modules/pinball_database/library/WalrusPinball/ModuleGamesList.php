@@ -148,7 +148,7 @@ class ModuleGamesList extends \Module
 				$strSection = $objGame->type;
 			}
 			
-			$strItemTemplate = ($this->customItemTpl != '' ? $this->customItemTpl : 'item_games_default');
+			$strItemTemplate = ($this->customItemTpl != '' ? $this->customItemTpl : 'item_game_default');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrGame);
 			$arrGamesRaw[] = $arrGame;

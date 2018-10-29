@@ -37,5 +37,6 @@ TemplateLoader::addFiles(array
 	'mod_games_list' 					=> 'system/modules/pinball_database/templates/modules',
 	
 	// Item Templates
-	'item_games_default' 				=> 'system/modules/pinball_database/templates/items',
+	'item_game_default' 				=> 'system/modules/pinball_database/templates/items',
+	'item_game_inserttag' 				=> 'system/modules/pinball_database/templates/items',
 ));

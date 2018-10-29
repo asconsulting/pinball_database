@@ -44,3 +44,4 @@ $GLOBALS['TL_MODELS']['tl_wp_archive_game'] 				= 'WalrusPinball\Model\Game';
  * Hooks
  */
 //$GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('WalrusPinball\Api', 'loadReaderPageFromUrl');
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] 	= array('WalrusPinball\Frontend\Game', 'insertTags');
