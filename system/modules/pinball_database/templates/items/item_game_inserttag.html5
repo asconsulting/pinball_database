@@ -1,13 +1,14 @@
-
 <div class="game_wrapper block<?= $this->class ?>">
-	<a class="reader_link" name="id-<?php echo $this->id; ?>"<?php if ($this->link): ?> href="<?php echo $this->link; ?>"<?php endif; ?>>
-	<?php if ($this->title): ?><span class="title"><?php echo $this->title; ?></span><?php endif; ?>
-	<?php if ($this->subtitle): ?><span class="subtitle"><?php echo $this->subtitle; ?></span><?php endif; ?>
-	<?php if ($this->machine_count > 1): ?><span class="machine_count">(Count: <?php echo $this->machine_count; ?>)</span><?php endif; ?>
-	</a>
-	<div class="outside_links">
+	<?php if ($this->title): ?><div class="title"><?php echo $this->title; ?></div><?php endif; ?>
+	<?php if ($this->subtitle): ?><div class="subtitle"><?php echo $this->subtitle; ?></div><?php endif; ?>
+	<div class="resources">
 	<?php if ($this->ipdb_number): ?><a class="ipdb" href="http://ipdb.org/machine.cgi?id=<?php echo $this->ipdb_number; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on IPDB">IPDB</a><?php endif; ?>
 	<?php if ($this->pinside_slug): ?><a class="pinside" href="https://pinside.com/pinball/archive/<?php echo $this->pinside_slug; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on Pinside">Pinside</a><?php endif; ?>
 	<?php if ($this->klov_number): ?><a class="klov" href="http://www.arcade-museum.com/game_detail.php?game_id=<?php echo $this->klov_number; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on Museum of the Game">KLOV</a><?php endif; ?>
+	<?php if ($this->pintips): ?><a class="pintips" href="<?php echo $this->pintips; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>on PinTips">PinTips</a><?php endif; ?>
+	<?php if ($this->papa_vid): ?><a class="papa_vid" href="<?php echo $this->papa_vid; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>PAPA Video">PAPA Video</a><?php endif; ?>
+	<?php if ($this->papa_rules): ?><a class="papa_rules" href="<?php echo $this->papa_rules; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>PAPA Rules">PAPA Rules</a><?php endif; ?>
+	<?php if ($this->pin_vids): ?><a class="pin_vids" href="<?php echo $this->pin_vids; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>Pinball Videos">Pinball Videos</a><?php endif; ?>
+	<?php if ($this->tutorial_60s): ?><a class="tutorial_60s" href="<?php echo $this->tutorial_60s; ?>" target="_blank" title="View <?php if ($this->title): ?><?php echo $this->title ." "; ?><?php endif; ?>60 Second Tutorial">60 Second Tutorial</a><?php endif; ?>
 	</div>
 </div>

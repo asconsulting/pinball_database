@@ -51,7 +51,7 @@ $GLOBALS['TL_LANG']['tl_wp_archive_game']['pintips'] 			= array('PinTips', 'Link
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['papa_vid'] 			= array('PAPA Video', 'Link to PAPA video.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['papa_rules'] 		= array('PAPA Rules', 'Details about custom game.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['pin_vids'] 			= array('Pinball Videos', 'Link to Pinball Videos website.');
-$GLOBALS['TL_LANG']['tl_wp_archive_game']['60s_tutorial'] 		= array('60 Second Tutorial', 'Link to 60 second tutorial.');
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['tutorial_60s'] 		= array('60 Second Tutorial', 'Link to 60 second tutorial.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['published'] 			= array('Published', 'Show this record on the front end.');
  
  /**

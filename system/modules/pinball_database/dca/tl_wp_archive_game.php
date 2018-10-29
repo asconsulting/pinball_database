@@ -138,7 +138,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     (
 		'__selector__'				  => array('type', 'is_custom'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
-		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,limited_edition,machine_type,system_family,system,system_version;{custom_legend},is_custom;{media_legend},pinside_thumb,image,thumbnail;{resources_legend},pintips,papa_vid,papa_rules,pin_vids,60s_tutorial;{publish_legend},published;',
+		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,limited_edition,machine_type,system_family,system,system_version;{custom_legend},is_custom;{media_legend},pinside_thumb,image,thumbnail;{resources_legend},pintips,papa_vid,papa_rules,pin_vids,tutorial_60s;{publish_legend},published;',
 		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
 		'arcade' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
 		'redemption' 				  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{publish_legend},published;',
@@ -400,9 +400,9 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'eval'                    => array('rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
-		'60s_tutorial' => array
+		'tutorial_60s' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['60s_tutorial'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['tutorial_60s'],
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
