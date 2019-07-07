@@ -13,20 +13,23 @@
 /**
 * Back end modules
 */
-$GLOBALS['BE_MOD'] = array_merge(
-	array(
-		'wp_archive' => array(
-			'wp_archive_game' => array(
-				'tables' 				=> array('tl_wp_archive_game'),
-				'icon'   				=> 'system/modules/pinball_database/assets/icons/list.png',
-				'regenerateAliases' 	=> array('WalrusPinball\Games', 'regenerateAliases'),
-				'parseQueries' 			=> array('WalrusPinball\Games', 'parseQueries'),
-				'parseMpu' 				=> array('WalrusPinball\Games', 'parseMpu'),
-				'parseManufacturers' 	=> array('WalrusPinball\Games', 'parseManufacturers'),
-				'export' 				=> array('WalrusPinball\Games', 'exportTable')
-			)	
-		)
-	), $GLOBALS['BE_MOD']);
+if (!is_array($GLOBALS['BE_MOD']['wp_archive']))
+{
+    array_insert($GLOBALS['BE_MOD'], 1, array('wp_archive' => array()));
+}
+
+array_insert($GLOBALS['BE_MOD']['wp_archive'], 0, array
+(			
+	'wp_archive_game' => array(
+		'tables' 				=> array('tl_wp_archive_game'),
+		'icon'   				=> 'system/modules/pinball_database/assets/icons/list.png',
+		'regenerateAliases' 	=> array('WalrusPinball\Games', 'regenerateAliases'),
+		'parseQueries' 			=> array('WalrusPinball\Games', 'parseQueries'),
+		'parseMpu' 				=> array('WalrusPinball\Games', 'parseMpu'),
+		'parseManufacturers' 	=> array('WalrusPinball\Games', 'parseManufacturers'),
+		'export' 				=> array('WalrusPinball\Games', 'exportTable')
+	)	
+), $GLOBALS['BE_MOD']);
 
 
 /**
