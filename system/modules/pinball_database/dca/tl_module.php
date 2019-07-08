@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['customItemTpl'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['customItemTpl'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options_callback'        => array('tl_module_pintastic', 'getItemTemplates'),
+	'options_callback'        => array('tl_module_wp_archive', 'getItemTemplates'),
 	'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
 	'sql'                     => "varchar(64) NOT NULL default ''"
 );
