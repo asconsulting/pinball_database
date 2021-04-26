@@ -19,6 +19,7 @@ $GLOBALS['TL_LANG']['tl_wp_archive_game']['custom_legend'] 		= 'Custom Details';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['pinside_legend'] 	= 'Pinside Data';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['media_legend'] 		= 'Media';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['resources_legend'] 	= 'Resource Links';
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['submitted_legend'] 	= 'User Submitted';
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['publish_legend'] 	= 'Publish';
 
 /**
@@ -54,7 +55,10 @@ $GLOBALS['TL_LANG']['tl_wp_archive_game']['pin_vids'] 			= array('Pinball Videos
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['tutorial_60s'] 		= array('60 Second Tutorial', 'Link to 60 second tutorial.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['em_guide'] 			= array('EM Guide', 'Link to EM Guide.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['pinball_spinner'] 	= array('Pinball Spinner', 'Link to pinball_spinner tutorial.');
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['user_submitted'] 	= array('Submitted by User', 'The entry was submitted by front end user.');
+$GLOBALS['TL_LANG']['tl_wp_archive_game']['verified'] 			= array('Verified', 'This user submitted entry has been verified/corrected.');
 $GLOBALS['TL_LANG']['tl_wp_archive_game']['published'] 			= array('Published', 'Show this record on the front end.');
+ 
  
  /**
  * Buttons
