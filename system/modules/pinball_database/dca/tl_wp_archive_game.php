@@ -138,11 +138,11 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
     (
 		'__selector__'				  => array('type', 'is_custom'),
         'default'                     => '{game_legend},title,subtitle,alias,type',
-		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,limited_edition,machine_type,system_family,system,system_version;{custom_legend},is_custom;{media_legend},pinside_thumb,image,thumbnail;{resources_legend},pintips,papa_vid,papa_rules,pin_vids,tutorial_60s,em_guide,pinball_spinner;{submitted_legend},user_submitted,verified;{publish_legend},published;',
-		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;',
+		'pinball' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,klov_number,pinside_number,pinside_slug;{detail_legend},manufacturer,release_year,production,limited_edition,machine_type,system_family,system,system_version;{custom_legend},is_custom;{media_legend},pinside_thumb,image,thumbnail;{resources_legend},pintips,papa_vid,papa_rules,pin_vids,tutorial_60s,em_guide,pinball_spinner;{submitted_legend},user_submitted,verified;{publish_legend},published;',
+		'pitch' 					  => '{game_legend},title,subtitle,alias,type,ipdb_number,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;',
 		'arcade' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;',
-		'redemption' 				  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;',
-		'other' 					  => '{game_legend},title,subtitle,alias,type;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;'
+		'redemption' 				  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;',
+		'other' 					  => '{game_legend},title,subtitle,alias,type,klov_number;{detail_legend},manufacturer,release_year,image,thumbnail;{custom_legend},customized;{submitted_legend},user_submitted,verified;{publish_legend},published;'
     ),
 	
 	// Subpalettes
@@ -283,7 +283,7 @@ $GLOBALS['TL_DCA']['tl_wp_archive_game'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_wp_archive_game']['machine_type'],
 			'inputType'               => 'select',
 			'filter'				  => true,
-			'options'				  => array('EM'=>'Electro-Mechanical', 'SS'=>'Solid State'),
+			'options'				  => array('EM'=>'Electro-Mechanical', 'SS'=>'Solid State', 'DMD'=>'Dot Matrix Display', 'LCD'=>'LCD Screen'),
 			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
