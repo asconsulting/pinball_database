@@ -60,7 +60,7 @@ class Api extends Contao_Frontend {
 							}
 						}
 						
-						echo json_encode(array('games'=>$arrGames), JSON_NUMERIC_CHECK);
+						echo json_encode($arrGames, JSON_NUMERIC_CHECK);
 					}
                 break;
             }
