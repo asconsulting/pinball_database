@@ -28,8 +28,8 @@ class Api extends Contao_Frontend {
     protected $strCookie = 'FE_USER_AUTH';
 
     public function initializeApi() {
-        if (substr(Environment::get('request'), 0, 4) == "wp_api/") {
-die('Trigger 1');
+        if (substr(Environment::get('request'), 0, 7) == "wp_api/") {
+
             $arrRequest = explode('/', Environment::get('request'));
             switch($arrRequest[1]) {
                 case "game":
