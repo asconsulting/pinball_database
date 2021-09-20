@@ -39,6 +39,8 @@ class Api extends Contao_Frontend {
 						
 						header('Content-Type: application/json');
 						
+						$count = 0;
+						
 						$objGame = Game::findPublishedByPartialTitle(Input::get('search'));
 						if ($objGame) {
 							while ($objGame->next()) {
@@ -46,9 +48,14 @@ class Api extends Contao_Frontend {
 								if (Input::get('game_type')) {
 									if ($objGame->type == Input::get('game_type')) {
 										$arrGames[] = $arrRow;
+										$count++;
 									}
 								} else {
 									$arrGames[] = $arrRow;
+									$count++;
+								}
+								if ($count == (Input::get('limit') ? Input::get('limit') : 10)) {
+									break 1;
 								}
 							}
 						}
