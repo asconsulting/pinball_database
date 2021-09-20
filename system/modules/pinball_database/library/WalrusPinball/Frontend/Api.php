@@ -29,8 +29,10 @@ class Api extends Contao_Frontend {
 
     public function initializeApi() {
         if (substr(Environment::get('request'), 0, 7) == "wp_api/") {
-die('Trigger 2');
+
             $arrRequest = explode('/', Environment::get('request'));
+var_dump($arrRequest);
+die('Trigger 3');
             switch($arrRequest[1]) {
                 case "game":
 					if (Input::get('search')) {
