@@ -41,7 +41,15 @@ class Api extends Contao_Frontend {
 						
 						$count = 0;
 						
-						$objGame = Game::findPublishedByPartialTitle(Input::get('search'), Input::get('type'));
+						$strType = trim(Input::get('type'));
+						if (strtolower($strType) == "undefined") {
+							$strType = false;
+						}
+						if ($strType == "") {
+							$strType = false;
+						}
+						
+						$objGame = Game::findPublishedByPartialTitle(Input::get('search'), $strType);
 						if ($objGame) {
 							while ($objGame->next()) {
 								$arrRow = $objGame->row();
