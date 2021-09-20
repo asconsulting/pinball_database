@@ -16,7 +16,7 @@
 ClassLoader::addClasses(array
 (
 	// Base Classes
-    'WalrusPinball\Api' 						=> 'system/modules/pinball_database/library/WalrusPinball/Api.php',
+    'WalrusPinball\Frontend\Api' 				=> 'system/modules/pinball_database/library/WalrusPinball/Frontend/Api.php',
     'WalrusPinball\Games' 						=> 'system/modules/pinball_database/library/WalrusPinball/Games.php',
 	
 	// Module Classes
