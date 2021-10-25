@@ -54,27 +54,32 @@ class Api extends Contao_Frontend {
 						
 						
 						$objResConnection = System::getContainer()->get('database_connection');
-						
-						$objDatabase = Database::getInstance()->prepare("SELECT id FROM tl_wp_archive_game WHERE published='1' AND type=? AND title LIKE '%" .$varValue ."%'")->execute(Input::get('search'));
-						$objGame = Collection::createFromDbResult($objDatabase, 'tl_wp_archive_game');
-						
-						//$objGame = Game::findPublishedByPartialTitle(Input::get('search'), $strType);
-						if ($objGame) {
-							while ($objGame->next()) {
-								$arrRow = $objGame->row();
-								if (Input::get('game_type')) {
-									if ($objGame->type == Input::get('game_type')) {
+						if ($strType) {
+							$objDatabase = Database::getInstance()->prepare("SELECT id FROM tl_wp_archive_game WHERE published='1' AND type=? AND title LIKE '%" .$objResConnection->quote(Input::get('search')) ."%'")->execute($strType);
+						} else {
+							$objDatabase = Database::getInstance()->execute("SELECT id FROM tl_wp_archive_game WHERE published='1' AND title LIKE '%" .$objResConnection->quote(Input::get('search')) ."%'");
+						}
+						if ($objDatabase) {
+							$objGame = Collection::createFromDbResult($objDatabase, 'tl_wp_archive_game');
+							
+							//$objGame = Game::findPublishedByPartialTitle(Input::get('search'), $strType);
+							if ($objGame) {
+								while ($objGame->next()) {
+									$arrRow = $objGame->row();
+									if (Input::get('game_type')) {
+										if ($objGame->type == Input::get('game_type')) {
+											$arrGames[] = $arrRow;
+											$count++;
+										}
+									} else {
 										$arrGames[] = $arrRow;
 										$count++;
 									}
-								} else {
-									$arrGames[] = $arrRow;
-									$count++;
+									if ($count == (Input::get('limit') ? Input::get('limit') : 10)) {
+										break 1;
+									}
 								}
-								if ($count == (Input::get('limit') ? Input::get('limit') : 10)) {
-									break 1;
-								}
-							}
+						}
 						}
 						
 						echo json_encode($arrGames, JSON_NUMERIC_CHECK);
