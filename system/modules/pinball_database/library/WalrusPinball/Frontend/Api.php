@@ -55,9 +55,9 @@ class Api extends Contao_Frontend {
 						
 						$objResConnection = System::getContainer()->get('database_connection');
 						if ($strType) {
-							$objDatabase = Database::getInstance()->prepare("SELECT id FROM tl_wp_archive_game WHERE published='1' AND type=? AND title LIKE '%" .trim($objResConnection->quote(Input::get('search')), "'") ."%'")->execute($strType);
+							$objDatabase = Database::getInstance()->prepare("SELECT * FROM tl_wp_archive_game WHERE published='1' AND type=? AND title LIKE '%" .trim($objResConnection->quote(Input::get('search')), "'") ."%'")->execute($strType);
 						} else {
-							$objDatabase = Database::getInstance()->execute("SELECT id FROM tl_wp_archive_game WHERE published='1' AND title LIKE '%" .trim($objResConnection->quote(Input::get('search')), "'") ."%'");
+							$objDatabase = Database::getInstance()->execute("SELECT * FROM tl_wp_archive_game WHERE published='1' AND title LIKE '%" .trim($objResConnection->quote(Input::get('search')), "'") ."%'");
 						}
 						if ($objDatabase) {
 							$objGame = Collection::createFromDbResult($objDatabase, 'tl_wp_archive_game');
