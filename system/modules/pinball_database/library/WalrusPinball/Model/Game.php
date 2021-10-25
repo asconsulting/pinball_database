@@ -83,7 +83,7 @@ class Game extends \Model
 			(
 				'order'  => "$t.title",
 				'column' => array("$t.published=?", "$t.type=?", "$t.title LIKE '%" .$varValue ."%'"),
-				'value' => array(1, $strType)
+				'value' => array('1', $strType)
 			),
 
 			$arrOptions
