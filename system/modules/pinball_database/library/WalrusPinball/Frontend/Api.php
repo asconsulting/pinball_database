@@ -60,8 +60,6 @@ class Api extends Contao_Frontend {
 							$objDatabase = Database::getInstance()->query("SELECT * FROM tl_wp_archive_game WHERE published='1' AND title LIKE '%" .trim($objResConnection->quote(Input::get('search')), "'") ."%'");
 						}
 						
-						var_dump($objDatabase);
-						
 						if ($objDatabase) {
 							$objGame = Collection::createFromDbResult($objDatabase, 'tl_wp_archive_game');
 							
