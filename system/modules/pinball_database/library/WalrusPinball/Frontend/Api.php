@@ -16,6 +16,9 @@ namespace WalrusPinball\Frontend;
 
 use WalrusPinball\Model\Game;
 
+
+use Contao\Model\Collection;
+use Contao\Database;
 use Contao\Environment;
 use Contao\Input;
 use Contao\System;
@@ -49,7 +52,13 @@ class Api extends Contao_Frontend {
 							$strType = false;
 						}
 						
-						$objGame = Game::findPublishedByPartialTitle(Input::get('search'), $strType);
+						
+						$objResConnection = System::getContainer()->get('database_connection');
+						
+						$objDatabase = Database::getInstance()->prepare("SELECT id FROM tl_wp_archive_game WHERE published='1' AND type=? AND title LIKE '%" .$varValue ."%'")->execute(Input::get('search'));
+						$objGame = Collection::createFromDbResult($objDatabase, 'tl_wp_archive_game');
+						
+						//$objGame = Game::findPublishedByPartialTitle(Input::get('search'), $strType);
 						if ($objGame) {
 							while ($objGame->next()) {
 								$arrRow = $objGame->row();
